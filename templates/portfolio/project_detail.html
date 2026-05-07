@@ -14,8 +14,8 @@
         <div class="col-md-6">
             {% if project.image %}
                 <div class="project-screenshot-frame project-screenshot-frame-1 rounded">
-                    <a href="{{ project.image.url }}" class="project-screenshot-link" data-gallery-index="0">
-                        <img src="{{ project.image.url }}" alt="{{ project.title }} screenshot 1" class="project-screenshot project-screenshot-1">
+                    <a href="{% static project.image.name %}" class="project-screenshot-link" data-gallery-index="0">
+                        <img src="{% static project.image.name %}" alt="{{ project.title }} screenshot 1" class="project-screenshot project-screenshot-1">
                     </a>
                 </div>
             {% else %}
@@ -27,8 +27,8 @@
         <div class="col-md-6">
             {% if project.image_2 %}
                 <div class="project-screenshot-frame project-screenshot-frame-2 rounded">
-                    <a href="{{ project.image_2.url }}" class="project-screenshot-link" data-gallery-index="1">
-                        <img src="{{ project.image_2.url }}" alt="{{ project.title }} screenshot 2" class="project-screenshot project-screenshot-2">
+                    <a href="{% static project.image_2.name %}" class="project-screenshot-link" data-gallery-index="1">
+                        <img src="{% static project.image_2.name %}" alt="{{ project.title }} screenshot 2" class="project-screenshot project-screenshot-2">
                     </a>
                 </div>
             {% else %}
@@ -41,8 +41,8 @@
             <div class="col-md-6">
                 {% if project.image_3 %}
                     <div class="project-screenshot-frame project-screenshot-frame-3 rounded">
-                        <a href="{{ project.image_3.url }}" class="project-screenshot-link" data-gallery-index="2">
-                            <img src="{{ project.image_3.url }}" alt="{{ project.title }} screenshot 3" class="project-screenshot project-screenshot-3">
+                        <a href="{% static project.image_3.name %}" class="project-screenshot-link" data-gallery-index="2">
+                            <img src="{% static project.image_3.name %}" alt="{{ project.title }} screenshot 3" class="project-screenshot project-screenshot-3">
                         </a>
                     </div>
                 {% else %}
@@ -56,8 +56,8 @@
             <div class="col-md-6">
                 {% if project.image_4 %}
                     <div class="project-screenshot-frame project-screenshot-frame-4 rounded">
-                        <a href="{{ project.image_4.url }}" class="project-screenshot-link" data-gallery-index="3">
-                            <img src="{{ project.image_4.url }}" alt="{{ project.title }} screenshot 4" class="project-screenshot project-screenshot-4">
+                        <a href="{% static project.image_4.name %}" class="project-screenshot-link" data-gallery-index="3">
+                            <img src="{% static project.image_4.name %}" alt="{{ project.title }} screenshot 4" class="project-screenshot project-screenshot-4">
                         </a>
                     </div>
                 {% else %}
@@ -69,8 +69,8 @@
             <div class="col-md-6">
                 {% if project.image_5 %}
                     <div class="project-screenshot-frame project-screenshot-frame-5 rounded">
-                        <a href="{{ project.image_5.url }}" class="project-screenshot-link" data-gallery-index="4">
-                            <img src="{{ project.image_5.url }}" alt="{{ project.title }} screenshot 5" class="project-screenshot project-screenshot-5">
+                        <a href="{% static project.image_5.name %}" class="project-screenshot-link" data-gallery-index="4">
+                            <img src="{% static project.image_5.name %}" alt="{{ project.title }} screenshot 5" class="project-screenshot project-screenshot-5">
                         </a>
                     </div>
                 {% else %}
@@ -84,8 +84,8 @@
             <div class="col-md-6">
                 {% if project.image_6 %}
                     <div class="project-screenshot-frame project-screenshot-frame-6 rounded">
-                        <a href="{{ project.image_6.url }}" class="project-screenshot-link" data-gallery-index="5">
-                            <img src="{{ project.image_6.url }}" alt="{{ project.title }} screenshot 6" class="project-screenshot project-screenshot-6">
+                        <a href="{% static project.image_6.name %}" class="project-screenshot-link" data-gallery-index="5">
+                            <img src="{% static project.image_6.name %}" alt="{{ project.title }} screenshot 6" class="project-screenshot project-screenshot-6">
                         </a>
                     </div>
                 {% else %}
@@ -97,8 +97,8 @@
             <div class="col-md-6">
                 {% if project.image_7 %}
                     <div class="project-screenshot-frame project-screenshot-frame-7 rounded">
-                        <a href="{{ project.image_7.url }}" class="project-screenshot-link" data-gallery-index="6">
-                            <img src="{{ project.image_7.url }}" alt="{{ project.title }} screenshot 7" class="project-screenshot project-screenshot-7">
+                        <a href="{% static project.image_7.name %}" class="project-screenshot-link" data-gallery-index="6">
+                            <img src="{% static project.image_7.name %}" alt="{{ project.title }} screenshot 7" class="project-screenshot project-screenshot-7">
                         </a>
                     </div>
                 {% else %}
