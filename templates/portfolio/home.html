@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Portfolio Project{% endblock %}
+
+{% block content %}
+<section class="hero-section p-5 rounded-3 mb-5">
+    <h1 class="display-5 fw-bold">The AI Portfolio of Aidan Chiu</h1>
+    <p class="lead">
+        {{ profile.headline }}
+    </p>
+    <p class="hero-copy">
+        {{ profile.home_intro }}
+    </p>
+    <a class="btn btn-primary btn-lg" href="{% url 'projects' %}">View Projects</a>
+</section>
+
+<section>
+    <h2 class="mb-4">Featured Projects</h2>
+    <div class="row g-4">
+        {% for project in featured_projects %}
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5">{{ project.title }}</h3>
+                    <p>{{ project.summary }}</p>
+                    <a class="btn btn-outline-dark" href="{{ project.get_absolute_url }}">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No featured projects yet. You will add them in the Django admin later.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

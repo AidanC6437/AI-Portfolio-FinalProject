@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Skills | Portfolio Project{% endblock %}
+
+{% block content %}
+<section class="mb-5">
+    <h1 class="mb-3">Skills</h1>
+    <p class="lead">
+        A snapshot of the technical tools, platforms, and development skills I have applied throughout my coursework and projects.
+    </p>
+</section>
+<div class="row g-3">
+    {% for skill in skills %}
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="h5 mb-3">{{ skill.name }}</h2>
+                    <ul class="skill-detail-list mb-0">
+                        {% for detail in skill.details %}
+                            <li>{{ detail }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

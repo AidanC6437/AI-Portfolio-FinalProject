@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Portfolio Project{% endblock %}
+
+{% block content %}
+<section class="row justify-content-center">
+    <div class="col-md-8 col-lg-5">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="h2 mb-3">Login</h1>
+                <p class="text-muted">
+                    Only the superuser account <strong>Aidan_Chiu</strong> can log in to manage this portfolio.
+                </p>
+
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                        {{ form.username }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
+                        {{ form.password }}
+                    </div>
+
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,128 @@
+[
+    {
+        "model": "portfolio.project",
+        "pk": 1,
+        "fields": {
+            "title": "Chatbot Project",
+            "slug": "chatbot-project",
+            "summary": "A conversational AI assistant that answers user questions in a helpful and organized way.",
+            "description": "Many users need fast answers but do not want to search through long documents or websites. This project solves that problem by providing a chatbot interface that can respond clearly and quickly.",
+            "category": "AI Application",
+            "tools_used": "Python, Django, OpenAI API, HTML, Bootstrap",
+            "key_features": "Natural language question answering\nSimple chat-style interface\nClean response formatting\nWeb-based user experience",
+            "contribution": "I designed the interface, connected the AI response flow, and tested the chatbot behavior.",
+            "challenges": "One challenge was making responses feel useful and consistent while keeping the code simple.",
+            "lessons_learned": "I learned how AI tools can be integrated into a web application and how prompt design affects response quality.",
+            "image": "",
+            "github_link": "",
+            "demo_link": "",
+            "is_featured": true,
+            "created_at": "2026-04-28T12:00:00Z"
+        }
+    },
+    {
+        "model": "portfolio.project",
+        "pk": 2,
+        "fields": {
+            "title": "n8n Agent Workflow Project",
+            "slug": "n8n-agent-workflow-project",
+            "summary": "An automated workflow that connects tools and AI steps to complete tasks with less manual work.",
+            "description": "Businesses often waste time repeating the same digital tasks across multiple systems. This project addresses that problem by using workflow automation to connect triggers, logic, and AI-powered actions.",
+            "category": "Automation",
+            "tools_used": "n8n, APIs, Webhooks, AI Tools",
+            "key_features": "Trigger-based workflow execution\nTool-to-tool automation\nConditional logic steps\nAI-enhanced task routing",
+            "contribution": "I designed the workflow steps, connected the services, and tested the automation from start to finish.",
+            "challenges": "The biggest challenge was debugging how data moved between workflow nodes and external services.",
+            "lessons_learned": "I learned how automation platforms can reduce repetitive work and how careful testing improves workflow reliability.",
+            "image": "",
+            "github_link": "",
+            "demo_link": "",
+            "is_featured": true,
+            "created_at": "2026-04-28T12:00:00Z"
+        }
+    },
+    {
+        "model": "portfolio.project",
+        "pk": 3,
+        "fields": {
+            "title": "LangChain Agent Project",
+            "slug": "langchain-agent-project",
+            "summary": "A LangChain-based agent that uses tools and reasoning steps to complete user tasks.",
+            "description": "Standard chatbots can struggle with multi-step tasks that require tool use or structured reasoning. This project explores how an AI agent can make decisions, call tools, and return more useful answers.",
+            "category": "AI Agent",
+            "tools_used": "Python, LangChain, APIs, Prompt Engineering",
+            "key_features": "Agent-style reasoning\nTool calling\nMulti-step response flow\nStructured output handling",
+            "contribution": "I built the core logic, tested prompts, and improved how the agent handled user requests.",
+            "challenges": "A key challenge was understanding why the agent chose certain steps and adjusting prompts to improve results.",
+            "lessons_learned": "I learned how agent frameworks organize tool usage and why guardrails matter in AI systems.",
+            "image": "",
+            "github_link": "",
+            "demo_link": "",
+            "is_featured": true,
+            "created_at": "2026-04-28T12:00:00Z"
+        }
+    },
+    {
+        "model": "portfolio.project",
+        "pk": 4,
+        "fields": {
+            "title": "Google AI Studio Media Project",
+            "slug": "google-ai-studio-media-project",
+            "summary": "A media-focused AI project that explores content creation and analysis using Google AI Studio.",
+            "description": "Content teams often need faster ways to generate, review, or improve media assets. This project uses Google AI Studio to experiment with media workflows and demonstrate how AI can support creative production.",
+            "category": "Generative AI",
+            "tools_used": "Google AI Studio, Prompt Design, Media Generation Tools",
+            "key_features": "AI-assisted media workflow\nPrompt-based content generation\nCreative experimentation\nPractical business use cases",
+            "contribution": "I planned the workflow, tested prompts, and evaluated how the generated media supported the project goals.",
+            "challenges": "The biggest challenge was refining prompts so the results matched the intended tone and quality.",
+            "lessons_learned": "I learned how prompt wording strongly affects creative AI output and how to evaluate generated media more critically.",
+            "image": "",
+            "github_link": "",
+            "demo_link": "",
+            "is_featured": false,
+            "created_at": "2026-04-28T12:00:00Z"
+        }
+    },
+    {
+        "model": "portfolio.project",
+        "pk": 5,
+        "fields": {
+            "title": "Machine Learning Project (scikit-learn)",
+            "slug": "machine-learning-project-scikit-learn",
+            "summary": "A machine learning project that uses scikit-learn to analyze data and make predictions.",
+            "description": "Organizations often need better ways to use data for decision-making. This project applies a machine learning model to a dataset so patterns can be identified and predictions can be made more effectively.",
+            "category": "Machine Learning",
+            "tools_used": "Python, pandas, scikit-learn, Jupyter Notebook",
+            "key_features": "Data cleaning and preparation\nModel training\nPrediction and evaluation\nClear presentation of results",
+            "contribution": "I prepared the dataset, selected the model, trained it, and reviewed its performance metrics.",
+            "challenges": "It was challenging to choose the right features and explain model results in plain English.",
+            "lessons_learned": "I learned how the machine learning workflow moves from raw data to evaluation and why model interpretation matters.",
+            "image": "",
+            "github_link": "",
+            "demo_link": "",
+            "is_featured": false,
+            "created_at": "2026-04-28T12:00:00Z"
+        }
+    },
+    {
+        "model": "portfolio.project",
+        "pk": 6,
+        "fields": {
+            "title": "Campus SkillSwap Django Project",
+            "slug": "campus-skillswap-django-project",
+            "summary": "A Django web app that helps students connect and exchange useful campus skills.",
+            "description": "Students often have valuable skills but do not have an easy way to connect with peers who need them. This project solves that problem by creating a platform where users can share skills and find learning opportunities.",
+            "category": "Web Development",
+            "tools_used": "Python, Django, SQLite, Bootstrap",
+            "key_features": "User-friendly web interface\nDatabase-backed project structure\nSkill sharing concept\nOrganized page navigation",
+            "contribution": "I developed the Django app structure, built the pages, and worked on presenting information clearly to users.",
+            "challenges": "One challenge was organizing the app so it stayed simple while still meeting project requirements.",
+            "lessons_learned": "I learned more about Django models, views, templates, and how to structure a full web application.",
+            "image": "",
+            "github_link": "",
+            "demo_link": "",
+            "is_featured": false,
+            "created_at": "2026-04-28T12:00:00Z"
+        }
+    }
+]

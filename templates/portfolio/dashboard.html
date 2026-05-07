@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Portfolio Project{% endblock %}
+
+{% block content %}
+<section class="mb-5">
+    <h1 class="mb-3">Portfolio Dashboard</h1>
+    <p class="lead">
+        This protected page shows that the website uses Django authentication appropriately.
+    </p>
+    <p>
+        Welcome, {{ request.user.username }}. You can use this area to review project content and jump into the admin site.
+    </p>
+</section>
+
+<section class="row g-4 mb-4">
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5">Total Projects</h2>
+                <p class="display-6 mb-0">{{ project_count }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5">Featured Projects</h2>
+                <p class="display-6 mb-0">{{ featured_count }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5">Unread Messages</h2>
+                <p class="display-6 mb-0">{{ unread_message_count }}</p>
+                <p class="text-muted mb-0">Total saved: {{ message_count }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5">Admin Access</h2>
+                <a class="btn btn-outline-dark mt-2" href="/admin/">Open Admin Panel</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row g-4 mb-4">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5">Project Images</h2>
+                <p class="mb-1"><strong>{{ projects_with_images }}</strong> project{{ projects_with_images|pluralize }} with screenshots</p>
+                <p class="text-muted mb-0"><strong>{{ projects_missing_images }}</strong> still need images</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5">Project Links</h2>
+                <p class="mb-1"><strong>{{ projects_with_any_link }}</strong> saved GitHub/demo link entries</p>
+                <p class="text-muted mb-0">Use the admin panel to add missing repositories and demos.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="mb-3">Recent Portfolio Items</h2>
+    <div class="row g-4">
+        {% for project in projects %}
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="h5">{{ project.title }}</h3>
+                        <p>{{ project.summary }}</p>
+                        <a class="btn btn-primary" href="{{ project.get_absolute_url }}">View Project</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

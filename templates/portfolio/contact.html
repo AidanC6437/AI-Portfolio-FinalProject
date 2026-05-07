@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Portfolio Project{% endblock %}
+
+{% block content %}
+<section class="mb-5">
+    <h1 class="mb-3">Contact Me</h1>
+    <p class="lead">
+        Reach out for project discussions, internship opportunities, professional connections. I am always eager to
+        chat!
+    </p>
+</section>
+
+<section class="row g-4">
+    <div class="col-lg-5">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-4">Contact Info</h2>
+                <div class="resume-link-list">
+                    <div class="resume-link-row">
+                        <p class="resume-link-label">Personal Email</p>
+                        <a href="mailto:{{ profile.personal_email }}" class="resume-link-anchor">
+                            {{ profile.personal_email }}
+                        </a>
+                    </div>
+                    <div class="resume-link-row">
+                        <p class="resume-link-label">School Email</p>
+                        <a href="mailto:{{ profile.school_email }}" class="resume-link-anchor">
+                            {{ profile.school_email }}
+                        </a>
+                    </div>
+                    <div class="resume-link-row">
+                        <p class="resume-link-label">LinkedIn</p>
+                        <a href="{{ profile.linkedin_url }}" target="_blank" rel="noopener" class="resume-link-anchor">
+                            {{ profile.linkedin_url }}
+                        </a>
+                    </div>
+                    <div class="resume-link-row mb-0">
+                        <p class="resume-link-label">GitHub</p>
+                        <a href="{{ profile.github_url }}" target="_blank" rel="noopener" class="resume-link-anchor">
+                            {{ profile.github_url }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-3">Send a Message</h2>
+                <p class="text-muted mb-4">
+                    Use the form below to send a direct message, inquiry, or to just say hello.
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="{{ form.name.id_for_label }}" class="form-label">Name</label>
+                        {{ form.name }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                        {{ form.email }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.subject.id_for_label }}" class="form-label">Subject</label>
+                        {{ form.subject }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.message.id_for_label }}" class="form-label">Message</label>
+                        {{ form.message }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary px-4">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

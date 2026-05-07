@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ project.title }} | Portfolio Project{% endblock %}
+
+{% block content %}
+<article>
+    <a href="{% url 'projects' %}" class="project-back-link">&larr; Back to Projects</a>
+
+    <h1 class="mb-3">{{ project.title }}</h1>
+    <p class="lead">{{ project.summary }}</p>
+
+    <div class="project-screenshot-gallery project-gallery-{{ project.slug }} row g-3 mb-4">
+        <div class="col-md-6">
+            {% if project.image %}
+                <div class="project-screenshot-frame project-screenshot-frame-1 rounded">
+                    <a href="{{ project.image.url }}" class="project-screenshot-link" data-gallery-index="0">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }} screenshot 1" class="project-screenshot project-screenshot-1">
+                    </a>
+                </div>
+            {% else %}
+                <div class="project-image-placeholder rounded d-flex align-items-center justify-content-center">
+                    <p class="mb-0 text-muted">Add screenshot 1 in Django admin.</p>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            {% if project.image_2 %}
+                <div class="project-screenshot-frame project-screenshot-frame-2 rounded">
+                    <a href="{{ project.image_2.url }}" class="project-screenshot-link" data-gallery-index="1">
+                        <img src="{{ project.image_2.url }}" alt="{{ project.title }} screenshot 2" class="project-screenshot project-screenshot-2">
+                    </a>
+                </div>
+            {% else %}
+                <div class="project-image-placeholder rounded d-flex align-items-center justify-content-center">
+                    <p class="mb-0 text-muted">Add screenshot 2 in Django admin.</p>
+                </div>
+            {% endif %}
+        </div>
+        {% if project.slug == "n8n-agent-workflow-project" or project.slug == "image-generation-project" %}
+            <div class="col-md-6">
+                {% if project.image_3 %}
+                    <div class="project-screenshot-frame project-screenshot-frame-3 rounded">
+                        <a href="{{ project.image_3.url }}" class="project-screenshot-link" data-gallery-index="2">
+                            <img src="{{ project.image_3.url }}" alt="{{ project.title }} screenshot 3" class="project-screenshot project-screenshot-3">
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="project-image-placeholder rounded d-flex align-items-center justify-content-center">
+                        <p class="mb-0 text-muted">Add screenshot 3 in Django admin.</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if project.slug == "n8n-agent-workflow-project" or project.slug == "image-generation-project" %}
+            <div class="col-md-6">
+                {% if project.image_4 %}
+                    <div class="project-screenshot-frame project-screenshot-frame-4 rounded">
+                        <a href="{{ project.image_4.url }}" class="project-screenshot-link" data-gallery-index="3">
+                            <img src="{{ project.image_4.url }}" alt="{{ project.title }} screenshot 4" class="project-screenshot project-screenshot-4">
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="project-image-placeholder rounded d-flex align-items-center justify-content-center">
+                        <p class="mb-0 text-muted">Add screenshot 4 in Django admin.</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                {% if project.image_5 %}
+                    <div class="project-screenshot-frame project-screenshot-frame-5 rounded">
+                        <a href="{{ project.image_5.url }}" class="project-screenshot-link" data-gallery-index="4">
+                            <img src="{{ project.image_5.url }}" alt="{{ project.title }} screenshot 5" class="project-screenshot project-screenshot-5">
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="project-image-placeholder rounded d-flex align-items-center justify-content-center">
+                        <p class="mb-0 text-muted">Add screenshot 5 in Django admin.</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if project.slug == "n8n-agent-workflow-project" %}
+            <div class="col-md-6">
+                {% if project.image_6 %}
+                    <div class="project-screenshot-frame project-screenshot-frame-6 rounded">
+                        <a href="{{ project.image_6.url }}" class="project-screenshot-link" data-gallery-index="5">
+                            <img src="{{ project.image_6.url }}" alt="{{ project.title }} screenshot 6" class="project-screenshot project-screenshot-6">
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="project-image-placeholder rounded d-flex align-items-center justify-content-center">
+                        <p class="mb-0 text-muted">Add screenshot 6 in Django admin.</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                {% if project.image_7 %}
+                    <div class="project-screenshot-frame project-screenshot-frame-7 rounded">
+                        <a href="{{ project.image_7.url }}" class="project-screenshot-link" data-gallery-index="6">
+                            <img src="{{ project.image_7.url }}" alt="{{ project.title }} screenshot 7" class="project-screenshot project-screenshot-7">
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="project-image-placeholder rounded d-flex align-items-center justify-content-center">
+                        <p class="mb-0 text-muted">Add screenshot 7 in Django admin.</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-8">
+            <section class="mb-4">
+                <h2 class="h4">Business Problem</h2>
+                <p>{{ project.description|linebreaks }}</p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4">Key Features</h2>
+                <p>{{ project.key_features|linebreaks }}</p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4">Your Role / Contribution</h2>
+                <p>{{ project.contribution|linebreaks }}</p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4">Biggest Challenge</h2>
+                <p>{{ project.challenges|linebreaks }}</p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4">What You Learned</h2>
+                <p>{{ project.lessons_learned|linebreaks }}</p>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="h5">Project Details</h2>
+                    <p><strong>Category:</strong> {{ project.category }}</p>
+                    <p class="mb-2"><strong>Tools Used:</strong></p>
+                    <ul class="project-tools-list">
+                        {% for tool in project.tools_used_list %}
+                            <li>{{ tool }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="project-link-list">
+                        <div class="resume-link-row project-link-row">
+                            <p class="resume-link-label mb-0">
+                                GitHub:
+                                {% if project.github_link %}
+                                    <a href="{{ project.github_link }}" target="_blank" rel="noopener" class="resume-link-anchor">
+                                        {{ project.github_link_label }}
+                                    </a>
+                                {% else %}
+                                    <span class="project-link-unavailable">N/A</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="resume-link-row project-link-row mb-0">
+                            <p class="resume-link-label mb-0">
+                                {% if project.slug == "google-ai-studio-media-project" %}Full Video:{% else %}Demo Link:{% endif %}
+                                {% if project.slug == "image-generation-project" %}
+                                    <a href="{% static 'files/image-generation-project.pdf' %}" target="_blank" rel="noopener" class="resume-link-anchor">
+                                        ACE Suit Full Presentation
+                                    </a>
+                                {% elif project.demo_link %}
+                                    <a href="{{ project.demo_link }}" target="_blank" rel="noopener" class="resume-link-anchor">
+                                        {{ project.demo_link_label }}
+                                    </a>
+                                {% else %}
+                                    <span class="project-link-unavailable">N/A</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<div class="gallery-viewer" id="galleryViewer" aria-hidden="true">
+    <button type="button" class="gallery-viewer-close" id="galleryClose" aria-label="Close image viewer">&times;</button>
+    <button type="button" class="gallery-viewer-nav gallery-viewer-prev" id="galleryPrev" aria-label="Previous image">&lsaquo;</button>
+    <img src="" alt="" class="gallery-viewer-image" id="galleryImage">
+    <button type="button" class="gallery-viewer-nav gallery-viewer-next" id="galleryNext" aria-label="Next image">&rsaquo;</button>
+    <p class="gallery-viewer-count" id="galleryCount"></p>
+</div>
+
+<script>
+    (function () {
+        const links = Array.from(document.querySelectorAll(".project-screenshot-link"));
+        const viewer = document.getElementById("galleryViewer");
+        const image = document.getElementById("galleryImage");
+        const count = document.getElementById("galleryCount");
+        const closeButton = document.getElementById("galleryClose");
+        const prevButton = document.getElementById("galleryPrev");
+        const nextButton = document.getElementById("galleryNext");
+        let currentIndex = 0;
+
+        function showImage(index) {
+            currentIndex = (index + links.length) % links.length;
+            const link = links[currentIndex];
+            const thumbnail = link.querySelector("img");
+            image.src = link.href;
+            image.alt = thumbnail ? thumbnail.alt : "Project screenshot";
+            count.textContent = `${currentIndex + 1} of ${links.length}`;
+        }
+
+        function openViewer(index) {
+            showImage(index);
+            viewer.classList.add("is-open");
+            viewer.setAttribute("aria-hidden", "false");
+            document.body.classList.add("gallery-viewer-open");
+            closeButton.focus();
+        }
+
+        function closeViewer() {
+            viewer.classList.remove("is-open");
+            viewer.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("gallery-viewer-open");
+            image.src = "";
+        }
+
+        links.forEach((link, index) => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                openViewer(index);
+            });
+        });
+
+        closeButton.addEventListener("click", closeViewer);
+        prevButton.addEventListener("click", function () { showImage(currentIndex - 1); });
+        nextButton.addEventListener("click", function () { showImage(currentIndex + 1); });
+        viewer.addEventListener("click", function (event) {
+            if (event.target === viewer) {
+                closeViewer();
+            }
+        });
+        document.addEventListener("keydown", function (event) {
+            if (!viewer.classList.contains("is-open")) {
+                return;
+            }
+            if (event.key === "Escape") {
+                closeViewer();
+            } else if (event.key === "ArrowLeft") {
+                showImage(currentIndex - 1);
+            } else if (event.key === "ArrowRight") {
+                showImage(currentIndex + 1);
+            }
+        });
+    })();
+</script>
+{% endblock %}

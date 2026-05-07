@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About | Portfolio Project{% endblock %}
+
+{% block content %}
+<section class="row g-4 align-items-start mb-5">
+    <div class="col-lg-4">
+        <div class="about-photo-box shadow-sm">
+            <img src="{% static 'images/about-profile-photo.jpg' %}" alt="{{ profile.full_name }}" class="about-photo">
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <h1 class="mb-3">About the developer</h1>
+        <p class="lead about-summary mb-0">
+            {{ profile.about_intro }} {{ profile.about_body }}
+        </p>
+    </div>
+</section>
+
+<section class="row g-4">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h4">Academic and Career Focus</h2>
+                <p>
+                    {{ profile.academic_focus }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h4">What This Portfolio Shows</h2>
+                <ul class="mb-0">
+                    {% for area in focus_areas %}
+                    <li>{{ area }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

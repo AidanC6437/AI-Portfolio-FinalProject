@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Resume | Portfolio Project{% endblock %}
+
+{% block content %}
+<section class="resume-header p-4 p-lg-5 rounded-3 mb-5">
+    <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+            <h1 class="mb-3">Resume and Credentials</h1>
+            <p class="lead mb-3">
+                {{ resume.summary }}
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow-sm resume-actions-card">
+                <div class="card-body p-4">
+                    <h2 class="h5 mb-3">Quick Link(s)</h2>
+                    <div class="resume-link-list">
+                        {% if profile.resume_pdf_path %}
+                        <div class="resume-link-row">
+                            <p class="resume-link-label">View full resume here</p>
+                            <a href="{% static profile.resume_pdf_path %}" target="_blank" rel="noopener"
+                                class="resume-link-anchor">
+                                Full Resume
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row g-4">
+    <div class="col-md-6 col-xl-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-3">Education</h2>
+                <ul class="resume-list mb-0">
+                    {% for item in education_items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-3">Technical Strengths</h2>
+                <ul class="resume-list mb-0">
+                    {% for item in strength_items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-3">Experience</h2>
+                <ul class="resume-list mb-0">
+                    {% for item in experience_items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-3">Interview Talking Points</h2>
+                <ul class="resume-list mb-0">
+                    {% for item in interview_points %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
