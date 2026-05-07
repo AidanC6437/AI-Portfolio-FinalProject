@@ -1,7 +1,8 @@
-#1/bin/bash
+#!/usr/bin/env bash
+set -o errexit
 
 # Run migrations
 python manage.py migrate
 
 # Start gunicorn server
-gunicorn AidanChiu_AI_Portfolio.wsgi:application --bind 0.0.0.0:8000
+gunicorn portfolio_project.wsgi:application --bind 0.0.0.0:${PORT:-8000}
